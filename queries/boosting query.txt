@@ -1,0 +1,10 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+     "query": {
+        "multi_match" : {
+            "query" : "අම්මා නන්ද මලනි",
+            "fields": ["song_name", "artist^2"]
+        }
+}
+}'

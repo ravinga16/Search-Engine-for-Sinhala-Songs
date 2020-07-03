@@ -1,0 +1,17 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "query": {
+    "bool" : {
+      "must" : {
+        "match" : { "lyrics" : "අම්මා" }
+      },
+      "should" : [
+        { "match" : { "artist" : "වික්ටර් රත්නායක" } },
+        { "match" : { "artist" : "සුනිල් එඩි*" } }
+      ],
+      "minimum_should_match" : 1,
+      "boost" : 1.0
+    }
+  }
+}'

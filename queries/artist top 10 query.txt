@@ -1,0 +1,15 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "query": {
+        "query_string" : {
+            "query": "ක්ලැරන්ස් විජේවර්ධන",
+            "fields": ["artist", "lyrics_writer" , "music_by"]
+        }
+    }, 
+    "size": 10,
+    "sort" : [
+        { "views" : {"order" : "desc"}}
+    ]
+}
+'

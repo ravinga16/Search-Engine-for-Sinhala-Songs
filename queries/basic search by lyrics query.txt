@@ -1,0 +1,14 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "query": {
+        "match_phrase" : {
+            "lyrics" : "ආදරේ රන් බිඟුන් නැසූ"
+        }
+    },
+    "highlight": {
+        "fields" : {
+            "lyrics" : {}
+        }
+    }
+}'

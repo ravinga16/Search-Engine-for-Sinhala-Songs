@@ -1,0 +1,10 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '    {
+        "from": 0,  
+        "size": 10, 
+        "sort" : [
+            { "views" : {"order" : "desc"}}
+        ]
+    }
+'

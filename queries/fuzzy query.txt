@@ -1,0 +1,16 @@
+curl --location --request POST 'http://localhost:9200/irfinalr/_search' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "query": {
+        "fuzzy": {
+            "song_name": {
+                "value": "අන්මා",
+                "fuzziness": "AUTO",
+                 "max_expansions": 50,
+                "prefix_length": 0,
+                "transpositions": true,
+                "rewrite": "constant_score"
+            }
+        }
+    }
+}'
