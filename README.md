@@ -1,4 +1,4 @@
-# Search_Engine_for_Sinhala_Songs
+# Search Engine for Sinhala Songs
 
 This repository contains,
   1. Crawler
